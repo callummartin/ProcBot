@@ -1,0 +1,36 @@
+// Sets up variables. 
+var target_uri "https://duckduckgo.com/"
+var confirm_message "Press enter to continue..."
+var search_box "ddg_search_box"
+var search_button "ddg_search_button"
+
+// Test procedure.
+start Firefox
+
+// Waits for two seconds. 
+wait 2
+
+// Navigates to the target_uri variable (Duckduckgo)
+goto [var]target_uri
+
+// Waits another two seconds.
+wait 2
+
+// Gets the search box by its ID.
+gi [var]search_box "searchbox_input"
+
+// Gets the search button by its XPATH.
+gx [var]search_button '//*[@id="searchbox_homepage"]/div/div/div/button'
+
+// Types Lorem ipsum into the search box.
+type [var]search_box "Lorem ipsum"
+
+// Clicks the search button. 
+click [var]search_button
+
+// Waits five seconds. 
+wait 5
+
+// Quits the browser session. 
+quit
+
